@@ -12,7 +12,7 @@
   "d1_databases": [
     {
       "binding": "DB_LIBRARY",
-      "database_id": "1e164957-3c19-4421-a959-911483b0f935",
+      "database_id": "26994525-d341-4f2e-970b-daec36e78cd6",
       "database_name": "retroassembly_library",
       "migrations_dir": "src/databases/migrations"
     }

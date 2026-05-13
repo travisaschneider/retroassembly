@@ -2,9 +2,9 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "assets": {
     "binding": "ASSETS",
-    "directory": "./dist/assets",
+    "directory": "./dist/client",
     "html_handling": "drop-trailing-slash",
-    "not_found_handling": "404-page",
+    "not_found_handling": "single-page-application",
     "run_worker_first": false
   },
   "compatibility_date": "2026-03-15",
@@ -12,7 +12,7 @@
   "d1_databases": [
     {
       "binding": "DB_LIBRARY",
-      "database_id": "${obj.RETROASSEMBLY_BUILD_TIME_WRANGLER_DATABASE_ID ?? '-'}",
+      "database_id": "1e164957-3c19-4421-a959-911483b0f935",
       "database_name": "retroassembly_library",
       "migrations_dir": "src/databases/migrations"
     }

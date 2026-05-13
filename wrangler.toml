@@ -41,4 +41,11 @@
     }
   ],
   "upload_source_maps": true
+  "vars": {
+    "STORAGE_PROVIDER": "s3",
+    "S3_ENDPOINT": "https://garage.travisschneider.com",
+    "S3_BUCKET_NAME": "roms",
+    "S3_REGION": "us-east-1",
+    "S3_FORCE_PATH_STYLE": "true"
+  }
 }

@@ -34,13 +34,7 @@
       "preview_bucket_name": "retroassembly"
     }
   ],
-  "services": [
-    {
-      "binding": "MSLEUTH",
-      "service": "msleuth"
-    }
-  ],
-  "upload_source_maps": true
+  "upload_source_maps": true,
   "vars": {
     "STORAGE_PROVIDER": "s3",
     "S3_ENDPOINT": "https://garage.travisschneider.com",

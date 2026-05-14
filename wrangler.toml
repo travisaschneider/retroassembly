@@ -1,45 +1,38 @@
-{
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "assets": {
-    "binding": "ASSETS",
-    "directory": "./dist/client",
-    "html_handling": "drop-trailing-slash",
-    "not_found_handling": "single-page-application",
-    "run_worker_first": false
-  },
-  "compatibility_date": "2026-03-15",
-  "compatibility_flags": ["nodejs_compat", "no_handle_cross_request_promise_resolution"],
-  "d1_databases": [
-    {
-      "binding": "DB_LIBRARY",
-      "database_id": "26994525-d341-4f2e-970b-daec36e78cd6",
-      "database_name": "retroassembly_library",
-      "migrations_dir": "src/databases/migrations"
-    }
-  ],
-  "main": "./src/server/workerd.ts",
-  "name": "retroassembly",
-  "observability": {
-    "enabled": true,
-    "head_sampling_rate": 1
-  },
-  "placement": {
-    "mode": "smart"
-  },
-  "preview_urls": true,
-  "r2_buckets": [
-    {
-      "binding": "BUCKET",
-      "bucket_name": "retroassembly",
-      "preview_bucket_name": "retroassembly"
-    }
-  ],
-  "upload_source_maps": true,
-  "vars": {
-    "STORAGE_PROVIDER": "s3",
-    "S3_ENDPOINT": "https://garage.travisschneider.com",
-    "S3_BUCKET_NAME": "roms",
-    "S3_REGION": "us-east-1",
-    "S3_FORCE_PATH_STYLE": "true"
-  }
-}
+name = "retroassembly"
+main = "./src/server/workerd.ts"
+compatibility_date = "2026-03-15"
+compatibility_flags = ["nodejs_compat", "no_handle_cross_request_promise_resolution"]
+preview_urls = true
+upload_source_maps = true
+
+[assets]
+directory = "./dist/client"
+binding = "ASSETS"
+html_handling = "drop-trailing-slash"
+not_found_handling = "single-page-application"
+run_worker_first = false
+
+[observability]
+enabled = true
+head_sampling_rate = 1
+
+[placement]
+mode = "smart"
+
+[[d1_databases]]
+binding = "DB_LIBRARY"
+database_id = "26994525-d341-4f2e-970b-daec36e78cd6"
+database_name = "retroassembly_library"
+migrations_dir = "src/databases/migrations"
+
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "retroassembly"
+preview_bucket_name = "retroassembly"
+
+[vars]
+STORAGE_PROVIDER = "s3"
+S3_ENDPOINT = "https://garage.travisschneider.com"
+S3_BUCKET_NAME = "roms"
+S3_REGION = "us-east-1"
+S3_FORCE_PATH_STYLE = "true"
